@@ -309,4 +309,6 @@ All 5 checks pass with the above setup.
 > is required on Linux because `mktemp -d` defaults to `700` permissions. macOS users
 > do not need this fix as `mktemp` there defaults to `755`.
 
-![Alt text](docs/images/submission.png)
+![Alt text](docs/images/sub.png)
+
+![Alt text](docs/images/os.png)
