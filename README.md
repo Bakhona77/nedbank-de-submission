@@ -20,6 +20,25 @@ This pipeline ingests raw financial data (accounts, customers, transactions) and
 ### Step 1: Build the image
 
 ```bash
+# 1.1 Verify tag is visible remotely
+git ls-remote origin refs/tags/stage1-submission
+
+# 1.2 Verify the repo contents look correct on GitHub
+# Open in browser:
+# https://github.com/Bakhona77/nedbank-de-submission
+
+# 1.3 Clone fresh and build
+cd /tmp
+git clone https://github.com/Bakhona77/nedbank-de-submission.git scorer-test
+cd scorer-test
+git checkout stage1-submission
+
+# 1.4 Verify required files are present
+ls -la
+ls pipeline/
+ls config/
+
+# 1.5 Build image
 docker build --no-cache -t my-submission:latest .
 ```
 
