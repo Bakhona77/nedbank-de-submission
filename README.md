@@ -20,7 +20,7 @@ This pipeline ingests raw financial data (accounts, customers, transactions) and
 ### Step 1: Build the image
 
 ```bash
-docker build --no-cache -t my-submission:test .
+docker build --no-cache -t my-submission:latest .
 ```
 
 ### Step 2: Prepare test data directories
@@ -69,14 +69,14 @@ ls $OUTPUT_DIR/gold/
 ## Pipeline Structure
 ```bash
 pipeline/
-├── ingest.py        # Bronze layer — raw CSV/JSONL → Delta
+├── ingest.py        # Bronze layer — raw CSV/JSONL
 ├── transform.py     # Silver layer — cleaning and validation
 ├── provision.py     # Gold layer — business aggregations
 ├── run_all.py       # Entry point — orchestrates all three stages
 └── spark_util.py    # Shared SparkSession configuration
 config/
 ├── pipeline_config.yaml   # All paths and Spark settings
-└── dq_rules.yaml          # Data quality rules (Stage 2+)
+└── dq_rules.yaml          # Data quality rules
 
 ---
 
@@ -300,7 +300,7 @@ cp config/pipeline_config.yaml /tmp/test-data/config/
 
 # Build and test
 docker build --no-cache -t my-submission:test .
-bash infrastructure/run_tests.sh --stage 1 --data-dir /tmp/test-data --image my-submission:test
+bash run_tests.sh --stage 1 --data-dir /tmp/test-data --image my-submission:latest
 ```
 
 All 5 checks pass with the above setup.
