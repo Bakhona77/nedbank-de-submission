@@ -50,7 +50,7 @@ docker run --rm \
   -v /tmp/test-data/input:/data/input:ro \
   -v /tmp/test-data/config:/data/config:ro \
   -v "${OUTPUT_DIR}:/data/output:rw" \
-  my-submission:test \
+  my-submission:latest \
   python pipeline/run_all.py
 
 echo "Exit code: $?"
