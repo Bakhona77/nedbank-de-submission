@@ -7,7 +7,7 @@
 
 ## Overview
 
-This pipeline ingests raw financial data (accounts, customers, transactions) and processes it through a Bronze → Silver → Gold medallion architecture using PySpark and Delta Lake.
+This pipeline ingests raw financial data (accounts, customers, transactions) and processes it through a Bronze -> Silver -> Gold medallion architecture using PySpark and Delta Lake.
 
 ---
 
