@@ -52,6 +52,7 @@ cp data/accounts.csv /tmp/test-data/input/
 cp data/customers.csv /tmp/test-data/input/
 cp data/transactions.jsonl /tmp/test-data/input/
 cp config/pipeline_config.yaml /tmp/test-data/config/
+cp config/dq_rules.yaml /tmp/test-data/config/
 ```
 
 ### Step 3: Run the pipeline
